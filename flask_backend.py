@@ -8,7 +8,7 @@ session_prompt = "The following is a conversation with an AI assistant. The assi
 def home():
     return render_template("chatbot.html")
 
-@app.route('/https://danielliu122.github.io/openAI_Chatbot_basic/chat', methods=['GET', 'POST'])
+@app.route('https://danielliu122.github.io/openAI_Chatbot_basic/chat', methods=['GET', 'POST'])
 def chat():
     global chat_log
     if chat_log is None: chat_log = session_prompt 
