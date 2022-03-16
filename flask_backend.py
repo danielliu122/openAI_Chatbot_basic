@@ -4,11 +4,11 @@ app = Flask(__name__)
 chat_log = None
 session_prompt = "The following is a conversation with an AI assistant. The assistant is helpful and clever.\n\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\nHuman: "
 
-@app.route('https://danielliu122.github.io/openAI_Chatbot_basic/')
+@app.route('/')
 def home():
     return render_template("chatbot.html")
 
-@app.route('/chat', methods=['POST'])
+@app.route('https://danielliu122.github.io/openAI_Chatbot_basic/chat', methods=['POST'])
 def chat():
     global chat_log
     if chat_log is None: chat_log = session_prompt 
