@@ -1,1 +1,1 @@
-web: gunicorn app:chatbotapp
+web: gunicorn flask_backend:app
