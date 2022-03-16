@@ -4,7 +4,7 @@ app = Flask(__name__)
 chat_log = None
 session_prompt = "The following is a conversation with an AI assistant. The assistant is helpful and clever.\n\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\nHuman: "
 
-@app.route('/')
+@app.route('https://danielliu122.github.io/openAI_Chatbot_basic/')
 def home():
     return render_template("chatbot.html")
 
