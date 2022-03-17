@@ -17,6 +17,7 @@ chat_log = None
 def ask(question, chat_log): 
     prompt_text = f"{chat_log}{restart_sequence}:{question}{start_sequence}:"
     if chat_log is None: chat_log = session_prompt 
+    print(chat_log)
     response = openai.Completion.create(
         engine="ada",
         prompt= prompt_text,
@@ -43,9 +44,7 @@ def message(userInput, chat_log):
 
     return computerAnswer, chat_log
 
-def clearChatLog():
-    chat_log= None
-    return 
+
   
 
 

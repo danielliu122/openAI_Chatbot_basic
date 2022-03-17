@@ -16,19 +16,34 @@
             Responses should not be taken seriously.
       </b></i>
     </form>
-
-    <head>
-      Execute clearchatlog on button click
-
-      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"> </script>
-      <script type=text/javascript> $(function() { $("#clearlogButton").click(function (event) { $.getJSON('/clearlog', { },
-      function(data) { }); return false; }); }); </script> 
-    </head>
   
-    <body>        
-            <input type = "button" id = "clearlogButton" value = "Click to clear chat log" />
-    </body>  
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript>
+            $(function() {
+              $('a#clearLogButton').on('click', function(e) {
+                e.preventDefault()
+                $.getJSON('/clearChatlog',
+                    function(data) {
+                  //do nothing
+                });
+                return false;
+              });
+            });
+    </script>
+    
+    
+    //button
+    <div class='container'>
+        <h3>clearLogButton</h3>
+            <form>
+                <a href=# id=clearLogButton><button class='btn btn-default'>Clear Chat Log</button></a>
+            </form>
+    
+    </div>
+    
+    
 
     <br>
   </head>
 </html>
+
