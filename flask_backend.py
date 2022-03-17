@@ -1,5 +1,5 @@
-from flask import Flask, redirect, render_template, url_for, request, jsonify
-from main_code import message, append_interaction_to_chat_log, clearChatLog
+from flask import Flask, redirect, render_template, url_for, request
+from main_code import message, append_interaction_to_chat_log
 
 app = Flask(__name__)
 chat_log = None
@@ -7,8 +7,6 @@ session_prompt = "The following is a conversation with an AI assistant. The assi
 
 @app.route('/',methods=['GET','POST'])
 def home():
-    if request.method == "POST":
-        clearChatLog()
     return render_template("chatbot.html")
 
 @app.route('/chat', methods=['GET', 'POST'])
@@ -23,11 +21,8 @@ def chat():
 
     #return '%s  <br/> <a href="/">Back Home</a>' % (computerMessage)
 
-@app.route('/clearlog')
-def clearChatLog():
-    print('In clearChatLog')
-    chat_log= None
-    return "Nothing"
+
+
 
 if __name__ == "__main__":
 	app.run(debug=True)
