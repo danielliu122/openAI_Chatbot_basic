@@ -43,7 +43,9 @@ def message(userInput, chat_log):
 
     return computerAnswer, chat_log
 
-
+def clearChatLog():
+    chat_log= None
+    return 
   
 
 
