@@ -15,7 +15,11 @@ def chat():
     global chat_log
     if chat_log is None: chat_log = session_prompt 
     userInput = request.form['user_input']
-    Message=message(userInput, chat_log)[0]
+    engine_form = request.form['engine_type']
+    if engine_form is not None:
+        engine_type= engine_form
+        print(engine_type)
+    Message=message(userInput, chat_log, engine_type)[0]
     chat_log= append_interaction_to_chat_log(userInput, Message, chat_log)
     userInputLen=len(userInput)
     return '%s <br/> <br/> %s <br/> %s <br/> <br/>  <a href="/">Back Home</a>   ' % (Message , chat_log[:179] , chat_log[185:] )
@@ -28,6 +32,7 @@ def clearChatLog():
     print("In clearChatLog")
     chat_log = None
     return "Nothing"
+
 
 #background process happening without any refreshing
 @app.route('/background_process_test')

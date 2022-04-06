@@ -1,22 +1,38 @@
 <!doctype HTML>
 <html>
   <head>
+    <h1>I used a free trial to test this chatbot, and the trial ran out on April first. 
+      to get an idea of openAI's semantic analysis, visit OpenAI's official website at <a href=" https://beta.openai.com/playground/p/default-qa?model=text-davinci-002"> link </a>.
+      You need to first sign up to access the content.
+    </h1>
     <form action="/chat" method="POST">
       Ask a question or make an inquiry to the chatbot: <input type="text" name="user_input">  
       <input type="submit" name= "form" value="Submit" />
+      <br>
+      Engine Type (Default Engine is 'Ada') 
+      <input type="text" name="engine_type">  
+      
+
+      
     </form>
+
+
+
+      <br>
+      What types of engines are there?
+
       <br>
       AI type is listed in order from cheapest (least complex) to most expensive (most complex). <br>
       Ada should be used basic conversation like one-word responses. <br>
       Babbage should be used for clever questions with multiple-word answers. <br>
       Curie might give you a helpful answer if asking a serious question. <br>
-      DaVinci should be <strong>reserved for only serious, complex questions. </strong> <br>
+      DaVinci should be reserved for only serious, complex questions. <br>
       Default AI type is 'Ada'.  <br>
-      <b><i>This bot is not meant to give realistic advice and is only meant to simulate a helpful assistant. 
-            Responses should not be taken seriously.
-      </b></i>
-    </form>
-  
+
+
+
+    <br>
+    <br>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type=text/javascript>
             $(function() {
@@ -30,11 +46,9 @@
               });
             });
     </script>
-    
-    
-    //button
+
+
     <div class='container'>
-        <h3>clearLogButton</h3>
             <form>
                 <a href=# id=clearLogButton><button class='btn btn-default'>Clear Chat Log</button></a>
             </form>
@@ -45,5 +59,12 @@
 
     <br>
   </head>
+
+  <footer>
+    <i>This bot is not meant to give realistic advice and is only meant to simulate a helpful assistant. 
+          Responses should not be taken seriously.
+    </i>
+  </footer>
+
 </html>
 

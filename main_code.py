@@ -13,13 +13,14 @@ start_sequence = "\nAI:"
 restart_sequence = "\nHuman: "
 session_prompt = "The following is a conversation with an AI assistant. The assistant is helpful and clever.\n\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\nHuman: "
 chat_log = None
+engine_type = "ada"
 
-def ask(question, chat_log): 
+def ask(question, chat_log, engine_type): 
     prompt_text = f"{chat_log}{restart_sequence}:{question}{start_sequence}:"
     if chat_log is None: chat_log = session_prompt 
     print(chat_log)
     response = openai.Completion.create(
-        engine="ada",
+        engine= engine_type,
         prompt= prompt_text,
         temperature=.95,
         max_tokens=150,
@@ -37,9 +38,9 @@ def append_interaction_to_chat_log(question, answer, chat_log):
 
 
 
-def message(userInput, chat_log):
+def message(userInput, chat_log, engine):
     if chat_log is None: chat_log = session_prompt 
-    computerAnswer= ask(userInput, chat_log) # ask takes two params, second one is the log
+    computerAnswer= ask(userInput, chat_log, engine_type) # ask takes two params, second one is the log
     chat_log=append_interaction_to_chat_log(userInput, computerAnswer, chat_log)
 
     return computerAnswer, chat_log
