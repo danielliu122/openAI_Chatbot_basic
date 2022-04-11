@@ -7,7 +7,7 @@ session_prompt = "The following is a conversation with an AI assistant. The assi
 
 @app.route('/',methods=['GET','POST'])
 def home():
-    global chat_log
+    #global chat_log
     return render_template("chatbot.html")
 
 @app.route('/chat', methods=['GET', 'POST'])
